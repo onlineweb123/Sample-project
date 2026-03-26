@@ -31,17 +31,31 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* Hero Section with HTML Image Positioning */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('d.JPG');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden; /* To contain the image */
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Pushes image behind text */
+            filter: brightness(0.4); /* darkens image for text readability */
+        }
+
+        .hero-content {
             color: white;
             text-align: center;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -95,7 +109,6 @@
             margin-top: 15px;
         }
 
-        /* Gallery Styles */
         .gallery-card {
             overflow: hidden;
             border-radius: 15px;
@@ -126,19 +139,9 @@
             transition: 0.3s;
         }
 
-        .btn:hover {
-            background: #ad1457;
-            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
-        }
-
-        /* WhatsApp Specific Styles */
         .btn-whatsapp {
             background: #25D366;
             margin-top: 10px;
-        }
-        
-        .btn-whatsapp:hover {
-            background: #128C7E;
         }
 
         .whatsapp-float {
@@ -178,13 +181,6 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.2rem; }
             .section-title { font-size: 2rem; }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 25px;
-            }
         }
     </style>
 </head>
@@ -199,10 +195,12 @@
     </header>
 
     <section class="hero">
-        <div>
+        <img src="d.jpg" alt="Beauty Parlour Background" class="hero-img">
+        
+        <div class="hero-content">
             <h1>Refine Your Beauty</h1>
             <p>Premium Hair & Skin Care Services in Cuddalore</p>
-            <a href="https://wa.me/919344165878" class="btn btn-whatsapp">
+            <a href="https://wa.me/919344165879" class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> Book via WhatsApp
             </a>
         </div>
@@ -212,7 +210,7 @@
         <h2 class="section-title">Our Services</h2>
         <div class="service-grid">
             <div class="service-card">
-                <i class="fas fa-cut style-icon" style="font-size: 2rem; color: #d81b60;"></i>
+                <i class="fas fa-cut" style="font-size: 2rem; color: #d81b60;"></i>
                 <h3>Hair Styling</h3>
                 <p>Professional haircuts, coloring, and spa treatments tailored for you.</p>
                 <span class="price">From ₹300</span>
@@ -233,7 +231,7 @@
     </section>
 
     <section class="gallery">
-        <h2 class="section-title">Our Work </h2>
+        <h2 class="section-title">Our Work</h2>
         <div class="gallery-grid">
             <div class="gallery-card">
                 <img src="a.jpg" alt="Bridal Makeup Work">
@@ -250,10 +248,10 @@
     <section class="contact" id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <p>Main Road, Cuddalore, Tamil Nadu</p>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Phone:</strong> +91 93441 65879</p>
         <div style="margin-top: 20px;">
             <a href="tel:+919344165879" class="btn">Call Now</a>
-            <a href="https://wa.me/91987654321" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://wa.me/919344165879" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </section>
 
