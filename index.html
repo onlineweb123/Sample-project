@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Glamour | Beauty Parlour</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fffafb;
+        }
+
+        header {
+            background: #d81b60;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('d.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #d81b60;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .services, .gallery, .contact {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-grid, .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #fce4ec;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d81b60;
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* Gallery Styles */
+        .gallery-card {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .btn {
+            background: #d81b60;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ad1457;
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+
+        /* WhatsApp Specific Styles */
+        .btn-whatsapp {
+            background: #25D366;
+            margin-top: 10px;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .contact {
+            background: #fce4ec;
+            text-align: center;
+            border-radius: 15px;
+            width: calc(100% - 40px);
+            margin: 40px auto;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919344165879?text=Hi, I would like to book an appointment!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <h1>Glow & Glamour</h1>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Refine Your Beauty</h1>
+            <p>Premium Hair & Skin Care Services in Cuddalore</p>
+            <a href="https://wa.me/919344165878" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Book via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-cut style-icon" style="font-size: 2rem; color: #d81b60;"></i>
+                <h3>Hair Styling</h3>
+                <p>Professional haircuts, coloring, and spa treatments tailored for you.</p>
+                <span class="price">From ₹300</span>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic" style="font-size: 2rem; color: #d81b60;"></i>
+                <h3>Skin Care</h3>
+                <p>Advanced facials and clean-ups for a glowing, healthy skin.</p>
+                <span class="price">From ₹800</span>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gem" style="font-size: 2rem; color: #d81b60;"></i>
+                <h3>Bridal Makeup</h3>
+                <p>Specialized bridal packages to make your big day unforgettable.</p>
+                <span class="price">From ₹5000</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 class="section-title">Our Work </h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="a.jpg" alt="Bridal Makeup Work">
+            </div>
+            <div class="gallery-card">
+                <img src="b.jpg" alt="Professional Hair Styling">
+            </div>
+            <div class="gallery-card">
+                <img src="c.jpg" alt="Facial and Skin Care Session">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>Main Road, Cuddalore, Tamil Nadu</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <div style="margin-top: 20px;">
+            <a href="tel:+919344165879" class="btn">Call Now</a>
+            <a href="https://wa.me/91987654321" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Glow & Glamour Beauty Parlour. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
